@@ -1,0 +1,41 @@
+{
+  "name": "jses6",
+  "version": "1.0.0",
+  "description": "used EcmaScript2015",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel js/script.js --watch --out-file js/script-compiled.js",
+    "init-project": "npm install && npm-run-all init:*",
+    "init:dirs": "mkdirp sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "browsersync": "browser-sync start --server --files css/*.css *.html",
+    "scss": "node-sass  --output-style compact  -watch  -o css sass",
+    "start-server": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanJedras/jses6.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomanJedras/jses6/issues"
+  },
+  "homepage": "https://github.com/RomanJedras/jses6#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "browser": "^0.2.6",
+    "browserlist": "^1.0.1",
+    "browserslist": "^4.5.5",
+    "es6-shim": "^0.35.5",
+    "http-server": "^0.11.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "init-project": "^1.0.0",
+    "node-sass": "^4.11.0"
+  }
+}
